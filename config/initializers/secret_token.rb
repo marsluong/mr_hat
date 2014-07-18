@@ -1,0 +1,12 @@
+# Be sure to restart your server when you modify this file.
+
+# Your secret key is used for verifying the integrity of signed cookies.
+# If you change this key, all old signed cookies will become invalid!
+
+# Make sure the secret is at least 30 characters and all random,
+# no regular words or you'll be exposed to dictionary attacks.
+# You can use `rake secret` to generate a secure secret key.
+
+# Make sure your secret_key_base is kept private
+# if you're sharing your code publicly.
+MrHat::Application.config.secret_key_base = 'bfcd4734d64626e4165afed2dfd7f614d13be2c2a63dafe46afdef9bf731602a2e7a02697601bd69e409ee64da1bc9bc796c48c4c80662bbc38c124aa5fcfdea'
