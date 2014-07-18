@@ -9,4 +9,16 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		File.read(token_file.chomp)
+	else
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
 MrHat::Application.config.secret_key_base = 'bfcd4734d64626e4165afed2dfd7f614d13be2c2a63dafe46afdef9bf731602a2e7a02697601bd69e409ee64da1bc9bc796c48c4c80662bbc38c124aa5fcfdea'
