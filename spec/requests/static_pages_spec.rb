@@ -5,7 +5,7 @@ describe "StaticPages" do
   describe "Login/Home page" do
 
 	it "should have the content 'Login" do
-    	visit '/static_pages/login'
+    	visit root_path
 		expect(page).to have_content('Login')
 	end
   end
@@ -13,7 +13,7 @@ describe "StaticPages" do
   describe "Sign Up" do
 
   	it "should have the content 'Sign Up'" do
-		visit '/static_pages/signup'
+		visit signup_path
 		expect(page).to have_content('Sign Up')
 	end
   end
@@ -21,7 +21,7 @@ describe "StaticPages" do
   describe "Mr. Hat" do
   	
 	it "should have the content 'Mr. Hat'" do
-		visit '/static_pages/hat'
+		visit hat_path
 		expect(page).to have_content('Mr. Hat')
 	end
   end
@@ -29,7 +29,7 @@ describe "StaticPages" do
   describe "Statistics" do
 
 	it "should have the content 'Statistics'" do
-		visit '/static_pages/statistics'
+		visit statistics_path
 		expect(page).to have_content('Statistics')
 	end
   end
@@ -37,7 +37,7 @@ describe "StaticPages" do
   describe "Settings" do
 
   	it "should have the content 'Settings'" do
-		visit '/static_pages/settings'
+		visit settings_path
 		expect(page).to have_content('Settings')
 	end
   end

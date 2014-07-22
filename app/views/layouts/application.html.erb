@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mr.Hat</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+  		<title>Mr.Hat</title>
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+	</head>
 
-<%= yield %>
-
-</body>
+	<body>
+		<header class="navbar navbar-fixed-top navbar-inverse">
+      		<div class="navbar-inner">
+	        	<div class="container">
+			    	<%= link_to "sample app", '#', id: "logo" %>
+					<nav>
+						<ul class="nav pull-right">
+							<li><%= link_to "Login",    '#' %></li>
+							<li><%= link_to "Sign Up",    '#' %></li>
+							<li><%= link_to "Statistics", '#' %></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		
+		<div class="container">
+			<%= yield %>
+		</div>
+	</body>
 </html>

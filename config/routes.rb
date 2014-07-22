@@ -1,9 +1,10 @@
 MrHat::Application.routes.draw do
-  get "static_pages/login"
-  get "static_pages/signup"
-  get "static_pages/hat"
-  get "static_pages/statistics"
-  get "static_pages/settings"
+
+  root 	'static_pages#home'
+  match '/signup',		to: 'static_pages#signup',		via: 'get'
+  match '/hat',			to: 'static_pages#hat',			via: 'get'
+  match '/statistics',	to: 'static_pages#statistics',	via: 'get'
+  match '/settings', 	to: 'static_pages#settings', 	via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
