@@ -5,6 +5,7 @@
 		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
+		<%= render 'layouts/shim' %>
 	</head>
 
 	<body>
@@ -14,17 +15,17 @@
 			    	<%= link_to "sample app", '#', id: "logo" %>
 					<nav>
 						<ul class="nav pull-right">
-							<li><%= link_to "Login",    '#' %></li>
-							<li><%= link_to "Sign Up",    '#' %></li>
-							<li><%= link_to "Statistics", '#' %></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</header>
 		
+		<%= render 'layouts/header' %>
 		<div class="container">
 			<%= yield %>
+			<%= render 'layouts/footer' %>
+			<%= debug(params) if Rails.env.development? %>
 		</div>
 	</body>
 </html>
