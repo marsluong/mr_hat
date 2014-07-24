@@ -1,6 +1,5 @@
 MrHat::Application.routes.draw do
-  get "users/new"
-
+  resources :users
   root 	'static_pages#home'
   match '/signup',		to: 'users#new',				via: 'get'
   match '/hat',			to: 'static_pages#hat',			via: 'get'
