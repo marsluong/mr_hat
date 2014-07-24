@@ -1,7 +1,10 @@
 MrHat::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   root 	'static_pages#home'
-  match '/signup',		to: 'users#new',				via: 'get'
+  match '/signup', 		to: 'users#new',					via: 'get'
+  match '/signin', 		to: 'sessions#new',				via: 'get'
+  match '/signout', 	to: 'sessions#destroy',			via: 'delete'
   match '/hat',			to: 'static_pages#hat',			via: 'get'
   match '/statistics',	to: 'static_pages#statistics',	via: 'get'
   match '/settings', 	to: 'static_pages#settings', 	via: 'get'
