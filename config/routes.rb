@@ -4,6 +4,7 @@ MrHat::Application.routes.draw do
   root 	'static_pages#home'
   match '/signup', 		to: 'users#new',				via: 'get'
   match '/signin', 		to: 'sessions#new',				via: 'get'
+ # match '/signin', 		to: 'static_pages#hat',			via: 'get'
   match '/signout', 	to: 'sessions#destroy',			via: 'delete'
   match '/hat',			to: 'static_pages#hat',			via: 'get'
   match '/statistics',	to: 'static_pages#statistics',	via: 'get'
