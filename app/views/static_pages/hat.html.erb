@@ -4,7 +4,13 @@
 	<center><%= image_tag("magicHat.png", alt: "Ze Hat") %></center>
 	
 	<div class="yes"><strong> YES </strong></div>
-	<center><div class="skip"><strong> SKIP </strong></div></center>
-	<div class="no"><strong> NO </strong></div>
+	<div class="skip"><strong> SKIP </strong></div>
+	<div class="no"><strong> NO </strong></div>	
+</div>
 
+<div>
+		<!-- %= form_tag import_products_path, multipart: true do %> -->
+	  		<%= file_field_tag :file %>
+	    	<%= submit_tag "Import" %>
+		<!-- % end %> -->
 </div>

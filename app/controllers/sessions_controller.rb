@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:session][:password])
 			sign_in user
 			redirect_to hat_path
+		#	redirect_to user
 		else
 			flash.now[:error] = 'Invalid email/password'
 			render 'new'
