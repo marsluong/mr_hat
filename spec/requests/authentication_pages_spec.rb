@@ -82,7 +82,7 @@ describe "Authentication" do
 		describe "as wrong user"
 			let(:user) { FactoryGirl.create(:user) }
 			let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
-			before { sign_in user, no_capybara: true }
+			before { sign_in user , no_capybara: true }
 
 			describe "submitting a GET request to the User#edit action" do
 				before { get edit_user_path(wrong_user) } 
