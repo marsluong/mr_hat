@@ -13,4 +13,9 @@ class StaticPagesController < ApplicationController
 
   def settings
   end
+
+  def import
+  	Static_page.import(params[:file])
+	redirect_to hat_path, notice: "Success"
+  end
 end

@@ -28,11 +28,7 @@ describe "Authentication" do
 
 		describe "with valid information" do
 			let(:user) { FactoryGirl.create(:user) }
-			before do
-				fill_in "Email",	with: user.email.upcase
-				fill_in "Password",	with: user.password
-				click_button "Sign in"
-			end
+			before { sign_in user }
 
 		#	it { should have_title(user.name) }
 			it { should have_link('Profile',		href: user_path(user)) }
@@ -43,8 +39,9 @@ describe "Authentication" do
 				before { click_link "Sign out" }
 				it { should have_link('Sign in') }
 			end
+		
 		end
-		end
+	end
 
 	describe "authorization" do 
 		describe "for non-signed-in users" do
@@ -85,14 +82,14 @@ describe "Authentication" do
 			before { sign_in user , no_capybara: true }
 
 			describe "submitting a GET request to the User#edit action" do
-				before { get edit_user_path(wrong_user) } 
+				#before { get edit_user_path(wrong_user) } 
 				#specify { expect(response.body).not_to match(full_title('Edit user')) }
 				#specify { expect(response).to redirect_to(root__url) }
 
 			end
 
 			describe "submitting a PATCH request to the Users#update action" do 
-				before { patch user_path(wrong_user) }
+				#before { patch user_path(wrong_user) }
 				#specify { expect(response).to redirect_to(root_url) }				
 			end
 		end

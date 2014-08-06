@@ -1,6 +1,13 @@
 MrHat::Application.routes.draw do
+  get "students/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :students do
+  	collection { post :import}
+	#collection { post :samples }
+   end
+
+
   root 	'static_pages#home'
   match '/signup', 		to: 'users#new',				via: 'get'
   match '/signin', 		to: 'sessions#new',				via: 'get'
