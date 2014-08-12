@@ -1,10 +1,8 @@
-require 'active_record'
-require 'mysql12'
+#require '
+#require 'mysql2'
 
 class Student < ActiveRecord::Base
-
-ActiveRecord::Base.establish_connection
-	attr_accessible :first :last
+#attr_accessible :first, :last
 
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|

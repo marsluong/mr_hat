@@ -1,9 +1,20 @@
-class Static_page < ActiveRecord::Base
-	def self.import(file)
-		CSV.foreach(file.path, headers: true) do |row|
-		  Static_page.create! row.to_hash
-		end
-	end
-end
+<title><h1>Mr. Hat</h1></title>
 
+<div class="hat">
+	<center><%= link_to image_tag("magicHat.png", alt: "Ze Hat"), '/students/show'  %></center>
+	<% @students%> 
+		<!--%= student.first %-->
+	<% end %>
+	
+	<div class="yes"><strong> YES </strong></div>
+	<div class="skip"><strong> SKIP </strong></div>
+	<div class="no"><strong> NO </strong></div>	
+</div>
 
+<div>
+<h2> Import students </h2>
+		<%= form_tag import_students_path, multipart: true do %>
+	  		<%= file_field_tag :file %>
+	    	<%= submit_tag "Import" %>
+		<% end %>
+</div>

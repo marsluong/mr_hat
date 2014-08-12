@@ -7,7 +7,9 @@ MrHat::Application.routes.draw do
 	#collection { post :samples }
    end
 
+   match 'new', to: 'students#new' , via: 'get'
 
+  get 'static_pages/index'
   root 	'static_pages#home'
   match '/signup', 		to: 'users#new',				via: 'get'
   match '/signin', 		to: 'sessions#new',				via: 'get'
@@ -16,6 +18,8 @@ MrHat::Application.routes.draw do
   match '/hat',			to: 'static_pages#hat',			via: 'get'
   match '/statistics',	to: 'static_pages#statistics',	via: 'get'
   match '/settings', 	to: 'static_pages#settings', 	via: 'get'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

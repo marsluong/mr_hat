@@ -1,11 +1,24 @@
 class StaticPagesController < ApplicationController
+def new
+@students = Student.all
+end
   def login
   end
 
-  def signup
+def index
+		@students = Student.all
+	end
+
+def show 
+	@students = Student.all
+	end
+
+def signup
   end
 
   def hat
+  @students = Student.all
+
   end
 
   def statistics
