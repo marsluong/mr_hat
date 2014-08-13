@@ -1,24 +1,22 @@
 class StaticPagesController < ApplicationController
-def new
-@students = Student.all
-end
+
+  def new
+  end
+  
   def login
   end
 
-def index
-		@students = Student.all
-	end
+  def index
+  end
 
-def show 
-	@students = Student.all
-	end
+  def show 
+  end
 
-def signup
+  def signup
   end
 
   def hat
-  @students = Student.all
-
+  	@students = Student.find(rand(7-1) +1)
   end
 
   def statistics
