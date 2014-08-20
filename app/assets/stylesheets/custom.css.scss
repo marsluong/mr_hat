@@ -37,6 +37,10 @@
 		}
 	}
 
+	img {
+		margin: 75px;
+	}
+
 
 /* typography */
 
@@ -68,7 +72,7 @@
 
 	h4 {
 		font-size: 4em;
-		margin-bottom: 90px;
+		margin-bottom: 50px;
 	}
 
 
@@ -144,7 +148,7 @@
 
 			&:first-child {
 				border: 0;
-				passing-top: 0; 
+				padding-top: 0; 
 			}
 
 			span {
@@ -169,11 +173,8 @@
 	}
 
 
-/* hat 
-.names {
-	height: 200px;
-	width: 500px;
-}*/
+/* hat */
+
 	.hat {
 		padding: 110px 60px 200px;
 		/*margin-bottom: 200px;*/
@@ -219,6 +220,16 @@
 		float: right;
 		text-shadow: 0 0 0.5em #FF4747, 0 0 0.5em #FF4747;
 	}
+
+	.courses {
+		margin:100px;
+	}
+
+	form.form-inline.input-append {
+		margin-top: 30px;
+	}
+
+	
 
 
 

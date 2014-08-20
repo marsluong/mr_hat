@@ -1,0 +1,19 @@
+<title><h1> Courses </h1></title>
+<h3><strong> Courses </strong></h3> 
+
+<div class="row">
+	<form class="form-inline">
+		<%= form_for(:session, url: sessions_path) do |f| %>
+			<%= f.label :course_name %>
+			<%= f.text_field :course_name %>
+
+			<%= f.submit "Add Course", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</form>
+</div>
+		
+	<div class="add"><strong>+</strong></div> 
+	<div class="delete"><strong>-</strong></div>
+
+
+

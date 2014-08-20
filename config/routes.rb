@@ -1,4 +1,5 @@
 MrHat::Application.routes.draw do
+  get "courses/new"
   get "students/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -11,6 +12,7 @@ MrHat::Application.routes.draw do
 
   get 'static_pages/index'
   root 	'static_pages#home'
+  match '/courses', 	to: 'users#courses',				via: 'get'
   match '/signup', 		to: 'users#new',				via: 'get'
   match '/signin', 		to: 'sessions#new',				via: 'get'
  # match '/signin', 		to: 'static_pages#hat',			via: 'get'
