@@ -1,5 +1,6 @@
-<title><h1> Courses </h1></title> 
+<title><h1> Courses </h1></title>
 <h3><strong> Courses </strong></h3> 
+
 
 <form class="form-inline input-append" >
 	<%= form_for(:session, url: sessions_path) do |f| %>
@@ -11,11 +12,10 @@
 
 <div class="courses">
 
-	<% if empty_course?(@user) %>
+	<% if empty_course? %>
 		<strong> No courses available </strong>
 	<% else %>
-		<%= empty_course?(@user) %>
-		<%= @user.email %>
+		<%= empty_course? %>
 	<% end %>
 </div>
 

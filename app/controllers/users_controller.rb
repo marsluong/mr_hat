@@ -25,6 +25,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def courses
+    remember_token = User.digest(cookies[:remember_token])
+ 	@user = User.find_by(remember_token: remember_token)
+  end
+
   def update
   	if @user.update_attributes(user_params)
 		flash[:success] = "Profile update"
@@ -52,4 +57,5 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		redirect_to(root_url) unless current_user?(@user)
 	end
+
 end
