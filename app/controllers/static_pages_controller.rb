@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
   end
 
   def hat
-  	@students = Student.find(rand(6-1) +1)
+  #	@students = Student.find(rand(6-1) +1)
   end
 
   def statistics

@@ -1,5 +1,4 @@
 module UsersHelper
-attr_accessor(:avail_courses)
 
 	# Returns the Gravatar for user
 	def gravatar_for(user, options = {size: 50})
@@ -10,7 +9,7 @@ attr_accessor(:avail_courses)
 	end
 
 	def empty_course? (user)
-		@avail_courses = Course.find_by(email: user.email)
+		@avail_courses = Course.find(:all, :conditions => ["email = ?",user.email])		
 		!@avail_courses.nil?
 	end
 

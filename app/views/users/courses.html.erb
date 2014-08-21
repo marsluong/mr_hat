@@ -9,15 +9,22 @@
 	<% end %>
 </form>
 
-<div class="courses">
+<ul class="courses">
 
 	<% if empty_course?(@user) %>
-		<strong> No courses available </strong>
+		<strong> Something is in here   </strong>
+		<% @avail_courses.each do |avail_course| %>
+			<li>
+				<strong>  <%= avail_course.course %>    </strong>
+			</li>
+		<% end %>
 	<% else %>
-		<%= empty_course?(@user) %>
-		<%= @user.email %>
-	<% end %>
-</div>
+		<strong> No courses available </strong>
+
+		<!--% @avail_courses.each do |avail_course| %-->
+			
+			<% end %>
+</ul>
 
 		
 
