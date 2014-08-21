@@ -12,8 +12,9 @@
 <ul class="courses">
 
 	<% if empty_course?(@user) %>
-		<strong> Something is in here   </strong>
+		<strong> Something is in here </strong>
 		<% @avail_courses.each do |avail_course| %>
+		sjkldjfskdjfl
 			<li>
 				<strong>  <%= avail_course.course %>    </strong>
 			</li>
@@ -21,9 +22,7 @@
 	<% else %>
 		<strong> No courses available </strong>
 
-		<!--% @avail_courses.each do |avail_course| %-->
-			
-			<% end %>
+	<% end %>
 </ul>
 
 		

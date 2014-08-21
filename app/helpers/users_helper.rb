@@ -9,7 +9,7 @@ module UsersHelper
 	end
 
 	def empty_course? (user)
-		@avail_courses = Course.find(:all, :conditions => ["email = ?",user.email])		
+		@avail_courses = Course.where(:all, :conditions => ["email = ?",user.email])		
 		!@avail_courses.nil?
 	end
 
