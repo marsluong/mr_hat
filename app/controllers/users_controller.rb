@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
-  def create
+ def create
   	@user = User.new(user_params) 
 
 	if @user.save
@@ -22,13 +22,23 @@ class UsersController < ApplicationController
 	end
   end
 
+  def add_course
+	@my_course = :course_name
+  	remember_token = User.digest(cookies[:remember_token])
+	@user = User.find_by(remember_token: remember_token)
+  	course_list = Course.new(:course => :course_name, :email => @user.email)
+	course_list.save
+  end
+
   def edit
   end
 
-  def courses
+   def courses
+ #  @my_course = :course_name
     remember_token = User.digest(cookies[:remember_token])
  	@user = User.find_by(remember_token: remember_token)
-#`	@avail_courses = Course.find_by(email: @user.email)	
+#	course_list = Course.new(:course => :course_name, :email => @user.email)
+#	course_list.save
   end
 
   def update
@@ -58,5 +68,6 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		redirect_to(root_url) unless current_user?(@user)
 	end
+
 
 end

@@ -1,12 +1,16 @@
 MrHat::Application.routes.draw do
   get "courses/new"
   get "students/new"
-  resources :users
+  resources :users do
+  	collection do
+		post 'add_course'
+	end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :students do
   	collection { post :import}
-	#collection { post :samples }
-   end
+  end
 
    match 'new', to: 'students#new' , via: 'get'
 
@@ -15,7 +19,6 @@ MrHat::Application.routes.draw do
   match '/courses', 	to: 'users#courses',				via: 'get'
   match '/signup', 		to: 'users#new',				via: 'get'
   match '/signin', 		to: 'sessions#new',				via: 'get'
- # match '/signin', 		to: 'static_pages#hat',			via: 'get'
   match '/signout', 	to: 'sessions#destroy',			via: 'delete'
   match '/hat',			to: 'static_pages#hat',			via: 'get'
   match '/statistics',	to: 'static_pages#statistics',	via: 'get'

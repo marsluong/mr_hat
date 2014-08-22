@@ -2,8 +2,7 @@
 <h3><strong> Courses </strong></h3> 
 
 <form class="form-inline input-append" >
-	<%= form_for(:session, url: sessions_path) do |f| %>
-		<!--%= f.label :course_name %-->
+	<%= form_for @my_course, :url => {:controller => 'users', :action => 'add_course'} do |f| %>
 		<%= f.text_field :course_name, placeholder: "Course Name" %>
 		<%= f.submit "Add Course", class: "btn btn-default btn-success" %>
 	<% end %>
@@ -12,9 +11,7 @@
 <ul class="courses">
 
 	<% if empty_course?(@user) %>
-		<strong> Something is in here </strong>
 		<% @avail_courses.each do |avail_course| %>
-		sjkldjfskdjfl
 			<li>
 				<strong>  <%= avail_course.course %>    </strong>
 			</li>
@@ -24,8 +21,3 @@
 
 	<% end %>
 </ul>
-
-		
-
-
-
